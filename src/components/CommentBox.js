@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { saveComment, fetchComments } from "actions";
 
-class CommentBox extends React.PureComponent {
+class CommentBox extends Component {
   state = {
     comment: ""
   };

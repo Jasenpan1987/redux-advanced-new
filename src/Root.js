@@ -10,5 +10,6 @@ export default ({ children, initState = {} }) => {
     initState,
     applyMiddleware(ReduxPromise)
   );
+  window.store = store;
   return <Provider store={store}>{children}</Provider>;
 };
