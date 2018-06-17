@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { saveComment, fetchComments } from "actions";
+import requireAuth from "components/requireAuth";
 
-class CommentBox extends React.PureComponent {
+class CommentBox extends Component {
   state = {
     comment: ""
   };
@@ -48,11 +49,7 @@ class CommentBox extends React.PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
-  comments: state.comments
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   { saveComment, fetchComments }
-)(CommentBox);
+)(requireAuth(CommentBox));
