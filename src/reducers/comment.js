@@ -6,6 +6,7 @@ export default function(state = [], action) {
     }
 
     case FETCH_COMMENTS: {
+      console.log("action:: ", action);
       return [
         ...state,
         ...action.payload.data.slice(0, 20).map(comment => comment.name)
