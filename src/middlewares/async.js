@@ -1,4 +1,4 @@
-export default ({ dispatch }) => next => async (action, getState) => {
+export default ({ dispatch, getState }) => next => async action => {
   if (!action.payload || !action.payload.then) {
     // action.payload is not a promise
     return next(action);
